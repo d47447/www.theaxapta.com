@@ -1,0 +1,24 @@
+/// <summary>
+    ///
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    [FormDataSourceEventHandler(formDataSourceStr(ProjAdjustmentSplit, TmpProjAdjustmentSplit), FormDataSourceEventType::Initialized)]
+    public static void TmpProjAdjustmentSplit_OnInitialized(FormDataSource sender, FormDataSourceEventArgs e)
+    {
+        TmpProjAdjustmentSplit      tmpProjAdjustmentSplit         = sender.cursor();
+        FormDataSource              tmpProjAdjustmentSplit_ds      = sender.formRun().dataSource('TmpProjAdjustmentSplit');
+        FormRun                     element                     = sender.formRun();
+        FormControl                 projID;
+       
+        projID  = element.design(0).controlName("TmpProjAdjustmentSplit_ProjId");
+
+        if(ProjParameters::find().myParamter == NoYes::Yes)
+        {
+            projID.allowEdit(false);
+        }
+        else
+        {
+            projID.allowEdit(true);
+        }
+    }
