@@ -1,0 +1,41 @@
+[DataContractAttribute]
+public class TheAxaptaResponseContract
+{
+    private boolean success;
+    private str errorMessage;
+    private str debugMessage;
+    private System.String salesOrder;
+
+    [DataMember("Message")]
+    public str parmMessage(str _value = errorMessage)
+    {
+        if (!prmIsDefault(_value))
+        {
+            errorMessage = _value;
+        }
+
+        return errorMessage;
+    }
+
+    [DataMember("Success")]
+    public Boolean parmSuccess(Boolean _value = success)
+    {
+        if (!prmIsDefault(_value))
+        {
+            success = _value;
+        }
+
+        return success;
+    }
+
+    [DataMember("DebugMessage")]
+    public str parmDebugMessage(str _value = debugMessage)
+    {
+        if (!prmIsDefault(_value))
+        {
+            debugMessage = _value;
+        }
+
+        return debugMessage;
+    }
+}
