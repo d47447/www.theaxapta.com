@@ -1,0 +1,17 @@
+public class TheAxaptaService extends SysOperationServiceBase
+{
+    TheAxaptaResponseContract response = new TheAxaptaResponseContract ();
+
+    [AifCollectionType('salesOrder', Types::Class, classStr(TheAxaptaRequestContract)),
+    AifCollectionType('return', Types::Class, classStr(TheAxaptaResponseContract ))]
+
+    public processMsg()
+    {
+        TheAxaptaRequestContract request;
+        // Now you can access the parm methods of the request class to get different values from the request
+        Str StoreId = request.paramStoreNumber();
+
+        response.parmSuccess(True);
+        response.parmMessage("Message read");
+    }
+}
