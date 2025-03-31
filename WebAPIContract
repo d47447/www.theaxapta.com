@@ -1,0 +1,36 @@
+[DataContractAttribute]
+public class TheAxaptaRequestContract
+{
+    private boolean isShipped;
+    private String255 dataAreaId;
+    private String255 storeNumber;
+    private String255 trackingNumber1;
+
+    [DataMember("TrackingNumber1")]
+    public String255 parmTrackingNumber1(String255 _trackingNumber1 = trackingNumber1)
+    {
+        trackingNumber1 = _trackingNumber1;
+        return trackingNumber1;
+    }
+
+    [DataMember("IsShipped")]
+    public boolean parmIsShipped(boolean _isShipped = isShipped)
+    {
+        isShipped = _isShipped;
+        return isShipped;
+    }
+
+    [DataMember("DataareaId")]
+    public String255 parmdataAreaId(String255 _dataAreaId = dataAreaId)
+    {
+        dataAreaId = _dataAreaId;
+        return dataAreaId;
+    }
+
+    [DataMember("StoreId")]
+    public String255 parmStoreNumber(String255 _storeNumber = storeNumber)
+    {
+        storeNumber = _storeNumber;
+        return storeNumber;
+    }
+}
