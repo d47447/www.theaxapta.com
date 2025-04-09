@@ -1,0 +1,20 @@
+    [ExtensionOf(classStr(CustFreeTextInvoicePostedBusinessEventContract))]
+    internal final class CustFreeTextInvoicePostedBusinessEventContractMyModel_Extension
+    {
+        // contract extension state
+        private str customerClassification;
+
+        protected void initialize(CustInvoiceJour _custInvoiceJour)
+        {
+            next initialize(_custInvoiceJour);
+            customerClassification = 'StandardCustomer';
+        }
+
+        // contract extension data members
+        [DataMember('MyModelCustomerClassification')]
+        public str parmMyModelCustomerClassification(str _customerClassification = customerClassification)
+        {
+            customerClassification = _customerClassification;
+            return customerClassification;
+        }
+    }
